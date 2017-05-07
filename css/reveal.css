@@ -47,6 +47,34 @@ body {
   background-color: #fff;
   color: #000; }
 
+  button {
+    padding: 10px 25px 10px 25px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 3px solid #93a1a1;
+    background: #dadada00;
+    color: #93a1a1;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: "Lato";
+    
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+  }
+
+   button:hover {
+    border-radius: 25px;
+    border: 3px solid #b7984d;
+    background: #dadada;
+    color: #b7984d;
+  }
+
+
 /*********************************************
  * VIEW FRAGMENTS
  *********************************************/

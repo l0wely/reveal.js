@@ -88,7 +88,7 @@
 						<p>Dialogue 2</p>
 						<br>
 						<a href="#/4/2"><button>Suivre le patron dans son bureau</button></a>
-						<a href="#/4/1"><button>Demander au patron 10 min pour se présenter à l'équipe</button></a>
+						<a href="#/4/1"><button onclick="miseAJourCompteur()">Demander au patron 10 min pour se présenter à l'équipe</button></a>
 					</section>
 					<section data-noupdownleft="true">
 						<h2>Choix 1</h2>
@@ -99,7 +99,7 @@
 						vos motivations et le diplôme que vous préparez »
 						</p>
 					</section>
-					<section data-noupdownleft="true">
+					<section data-noupdownleft="true" data-reponse="false">
 						<h2>Choix 2</h2>
 						<p>Mauvaise réponse ....</p>
 						<br>
@@ -117,7 +117,7 @@
 						<p>Dialogue 2</p>
 						<br>
 						<a href="#/5/2"><button>Soumettre une proposition</button></a>
-						<a href="#/5/1"><button>Attendre et ne rien dire</button></a>
+						<a href="#/5/1"><button onclick="miseAJourCompteur()">Attendre et ne rien dire</button></a>
 					</section>
 					<section data-noupdownleft="true">
 						<p>Wahou mais c'est la bonne réponse !</p>
@@ -147,7 +147,7 @@
 						<p>Dialogue 2</p>
 						<br>
 						<a href="#/6/2"><button>Tout gardez dans la tête</button></a>
-						<a href="#/6/1"><button>Notez les informations</button></a>
+						<a href="#/6/1"><button onclick="miseAJourCompteur()">Notez les informations</button></a>
 						<a href="#/6/1"><button>Posez des questions sur l'organisation</button></a>
 					</section>
 					<section data-noupdownleft="true">
@@ -177,7 +177,7 @@
 						<p>Dialogue 2</p>
 						<br>
 						<a href="#/7/2"><button>Mauvaise réponse</button></a>
-						<a href="#/7/1"><button>Bonne réponse </button></a>
+						<a href="#/7/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
 					</section>
 					<section data-noupdownleft="true">
 						<h2>Choix 1</h2>
@@ -206,7 +206,7 @@
 						<p>Dialogue 2</p>
 						<br>
 						<a href="#/8/2"><button>Mauvaise réponse</button></a>
-						<a href="#/8/1"><button>Bonne réponse </button></a>
+						<a href="#/8/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
 					</section>
 					<section data-noupdownleft="true">
 						<h2>Choix 1</h2>
@@ -235,7 +235,7 @@
 						<p>Dialogue 2</p>
 						<br>
 						<a href="#/9/2"><button>Mauvaise réponse</button></a>
-						<a href="#/9/1"><button>Bonne réponse </button></a>
+						<a href="#/9/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
 					</section>
 					<section data-noupdownleft="true">
 						<h2>Choix 1</h2>
@@ -262,7 +262,7 @@
 						<p>Dialogue 2</p>
 						<br>
 						<a href="#/10/2"><button>Mauvaise réponse</button></a>
-						<a href="#/10/1"><button>Bonne réponse </button></a>
+						<a href="#/10/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
 					</section>
 					<section data-noupdownleft="true">
 						<h2>Choix 1</h2>
@@ -285,7 +285,7 @@
 				</section>
 				
 				<section data-nokeyboard="true">
-					<p>Vous avez réalisé XXX bonnes réponses</p>
+					<p id="end">Vous avez réalisé XXX bonnes réponses</p>
 					<a href="#/12"><button>Passez à la partie conseil</button></a>
 					<a href="#/3"><button>Revenir au début</button></a>
 				</section>
@@ -702,6 +702,19 @@ Reveal.addEventListener( 'customevent', function() {
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+
+		<script>
+			var compteurValue = 0;
+			
+			function miseAJourCompteur(){
+				compteurValue++;
+		
+				var endValue = document.getElementById('end');
+		
+				endValue.innerHTML = "Vous avez réalisé "+ compteurValue +" bonnes réponses.";
+		
+			}
+		</script>
 
 		<script>
 
