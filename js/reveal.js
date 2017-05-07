@@ -4244,10 +4244,10 @@
 		}
 
 		var test = document.getElementsByClassName('present');
-			if(test[1].dataset.noupdownleft == "true"){
-			console.log(test[1].dataset.noupdown)
+			if(test[1].dataset.noupdownleft == "true" || test[0].dataset.noupdownleft == "true"){
+			//console.log(test[1].dataset.noupdownleft)
 
-				console.log("true")
+				//console.log("true")
 							// 2. System defined key bindings
 				if( triggered === false ) {
 			
@@ -4266,7 +4266,10 @@
 				}
 			}else{
 
-				console.log("false")
+				/*console.log("false")
+				console.log("---"+test.length)
+				console.log("---"+test[0].dataset.noupdownleft)
+				console.log("---"+test[1].dataset.noupdownleft)*/
 
 					// 2. System defined key bindings
 				if( triggered === false ) {
