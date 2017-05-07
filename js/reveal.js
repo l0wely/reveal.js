@@ -4244,7 +4244,7 @@
 		}
 
 		var test = document.getElementsByClassName('present');
-			if(test[1].dataset.noupdown == "true"){
+			if(test[1].dataset.noupdownleft == "true"){
 			console.log(test[1].dataset.noupdown)
 
 				console.log("true")
@@ -4256,7 +4256,7 @@
 			
 					switch( event.keyCode ) {
 						// h, left
-						case 72: case 37: navigateLeft(); break;
+						//case 72: case 37: navigateLeft(); break;
 						// l, right
 						case 76: case 39: navigateRight(); break;
 						default:
