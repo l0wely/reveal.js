@@ -74,7 +74,7 @@
 				
 				<!-- PARTIE SCENARIO -->
 				<section>
-						<h2>Bonjour</h2>
+						<h2>Bonjour <input id="principal_input" type="text" placeholder="Prénom"></h2> 
 						<p>
 							Vous venez d'arriver dans une entreprise de développement informatique en tant que alternant
 						</p>
@@ -84,7 +84,7 @@
 				<section>
 					<section data-nokeyboard="true">
 						<h2>Se présenter</h2>
-						<p>« Bonjour Romain, j'espere que tu vas bien ? »</p>
+						<p>« Bonjour <span class="prenom">Romain</span>, j'espere que tu vas bien ? »</p>
 						<br>
 						<p>« Bonjour Monsieur. Oui, très bien, merci et vous ? »</p>
 						<br>
@@ -205,7 +205,7 @@
 				<section>
 					<section data-nokeyboard="true">
 						<h2>Retenir les prénoms</h2>
-						<p>« Souhaitez tous la bienvenue à Romain, qui est avec nous pour une année d'apprentissage.</p>
+						<p>« Souhaitez tous la bienvenue à <span class="prenom">Romain</span>, qui est avec nous pour une année d'apprentissage.</p>
 						<br>
 						<p>Ici c'est Opaline, ici Maguerite, à cette table tu trouveras Germain et Marjolaine.</p>
 						<br>
@@ -260,7 +260,7 @@
 				<section>
 					<section data-nokeyboard="true">
 						<h2>Preuve de patience</h2>
-						<p>« Bon Romain, tu devais travailler sur le projet de développement du service mais pour le moment j'ai besoin de toi ailleurs.</p>
+						<p>« Bon <span class="prenom">Romain</span>, tu devais travailler sur le projet de développement du service mais pour le moment j'ai besoin de toi ailleurs.</p>
 						<p>Il faut que tu photocopies tous les documents que l'on a sur Madame Bakari et il faut que tu vérifies chaque partie du dossier pour savoir s'il est en règle »</p>
 						<br>
 						<a href="#/10/2"><button>Je refuse de faire ce travail fastidieux, et demande de reprendre l'autre projet</button></a>
@@ -393,6 +393,7 @@
 				</section>
 				
 				<section data-nokeyboard="true">
+					<p>Merci d'avoir suivi ce guide <span class="prenom">Romain</span></p>
 					<a href="#/0"><button>Accueil</button></a>
 				</section>
 
@@ -414,6 +415,19 @@
 				endValue.innerHTML = "Vous avez réalisé "+ compteurValue +" bonnes réponses.";
 		
 			}
+
+			var input = document.getElementById('principal_input');
+			var prenom = document.getElementsByClassName('prenom');
+			
+			input.onkeypress = function() {
+				setTimeout(function () {
+					for (var i = 0; i < prenom.length; i++) {
+						prenom[i].innerHTML = input.value;
+					}
+    			}, 10);
+				
+			};
+
 		</script>
 
 		<script>
@@ -442,449 +456,3 @@
 
 	</body>
 </html>
-=======
-<!doctype html>
-<html lang="en">
-
-	<head>
-		<meta charset="utf-8">
-
-		<title>Alternarium</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
-
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Alternarium</h1>
-					<h3>L'outil pour bien réussir son insertion dans l'entreprise</h3>
-					<p>
-						<small>Crée par Antoine Portejoie / Romain Jallet </small>
-					</p>
-				</section>
-
-				<section>
-					<section>
-						<h2>Tutoriel</h2>
-						<p>
-						Pour naviguer entre les sections vous devez utiliser les touches fléchées.
-						</p>
-						<br>
-						<p>
-						Lorsque vous avez des choix à l'écran vous devez cliquer sur un bouton pour continuer
-						</p>
-					</section>
-				</section>
-				
-				<section data-nokeyboard="true">
-						<p>
-							Alternarium est composé de deux parties. Sélectionnez ou vous souhaitez commencer.
-						</p>
-						<br>
-						<a href="#/3"><button>Partie scénario</button></a>
-						<a href="#/12"><button>Partie conseil</button></a>
-				</section>
-				
-				
-				<!-- PARTIE SCENARIO -->
-				<section>
-						<h2>Bonjour</h2>
-						<p>
-							Vous venez d'arriver dans une entreprise de développement informatique en tant que alternant
-						</p>
-				</section>
-				
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section data-nokeyboard="true">
-						<h2>Se présenter</h2>
-						<p>Bonjour Romain, j'espere que tu vas bien ?</p>
-						<br>
-						<p>Bonjour Monsieur. Oui, très bien, merci et vous ?</p>
-						<br>
-						<p>Bien également, tu peux m'appeler Marc, voici toute l'équipe, est-ce que tu veux faire quelque chose avant de me suivre à mon bureau ?</p>
-						<a href="#/4/2"><button>Suivre le patron dans son bureau</button></a>
-						<a href="#/4/1"><button onclick="miseAJourCompteur()">Demander au patron 10 min pour se présenter à l'équipe</button></a>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 1</h2>
-						<p>Wahou mais c'est la bonne réponse !</p>
-						<br>
-						<p>L’arrivée d’un étudiant est généralement attendue avec impatience au sein d’une équipe. Si toutefois votre tuteur ne vous présente pas à vos futurs collègues, 
-						« demandez-lui de vous octroyer 10 minutes avant le début de la prochaine réunion afin que vous puissiez présenter votre parcours, 
-						vos motivations et le diplôme que vous préparez »
-						</p>
-					</section>
-					<section data-noupdownleft="true" data-reponse="false">
-						<h2>Choix 2</h2>
-						<p>Mauvaise réponse ....</p>
-						<br>
-						<p>L’arrivée d’un étudiant est généralement attendue avec impatience au sein d’une équipe. Si toutefois votre tuteur ne vous présente pas à vos futurs collègues, 
-						« demandez-lui de vous octroyer 10 minutes avant le début de la prochaine réunion afin que vous puissiez présenter votre parcours, 
-						vos motivations et le diplôme que vous préparez »
-						</p>
-					</section>
-				</section>
-				
-				<section>
-					<section data-nokeyboard="true">
-						<h2>Rester Humble</h2>
-						<p><small>Excuse moi Patrick, qu'est ce que tu pense du nouveau produit proposer par la branche innovation ? Ca va vraiment servir a quelque chose ?</small></p>
-						<br>
-						<p><small>Je ne suis pas au courant pour ce nouveau truc, ca consiste en quoi ?</small><p>
-						<br>
-						<p><small>C'est un nouveau produit de domotique compatible avec des casques VR. Je suis pas certain que ca touche vraiment une cible particulière.</small></p>
-						<a href="#/5/1"><button onclick="miseAJourCompteur()">Attendre et ne rien dire</button></a>
-						<a href="#/5/2"><button>Soumettre une proposition</button></a>
-					</section>
-					<section data-noupdownleft="true">
-						<p>Wahou mais c'est la bonne réponse !</p>
-						<br>
-						<p>Ce n’est pas parce que vous êtes en dernière année de Licence Marché des particuliers que vous connaissez tout du métier de conseiller clientèle. 
-						« Il faut que l’alternant reste dans sa position d’apprenant et sache faire preuve d’écoute envers les plus expérimentés », insiste Valérie Deflandre. 
-						Vous estimez que la méthode travail qu’utilise l’équipe n’est pas pertinente ? 
-						Attendez d’avoir compris votre nouvel environnement de travail avant d’émettre des critiques.
-						</p>
-					</section>
-					<section data-noupdownleft="true">
-						<p>Mauvaise réponse ....</p>
-						<br>
-						<p>Ce n’est pas parce que vous êtes en dernière année de Licence Marché des particuliers que vous connaissez tout du métier de conseiller clientèle. 
-						« Il faut que l’alternant reste dans sa position d’apprenant et sache faire preuve d’écoute envers les plus expérimentés », insiste Valérie Deflandre. 
-						Vous estimez que la méthode travail qu’utilise l’équipe n’est pas pertinente ? 
-						Attendez d’avoir compris votre nouvel environnement de travail avant d’émettre des critiques.
-						</p>
-						
-					</section>
-				</section>
-				
-				<section>
-					<section data-nokeyboard="true">
-						<h2>Intéressez aux autres</h2>
-						<p>Dialogue 1</p>
-						<p>Dialogue 2</p>
-						<br>
-						<a href="#/6/1"><button onclick="miseAJourCompteur()">Notez les informations</button></a>
-						<a href="#/6/2"><button>Tout gardez dans la tête</button></a>
-						<a href="#/6/1"><button onclick="miseAJourCompteur()">Posez des questions sur l'organisation</button></a>
-					</section>
-					<section data-noupdownleft="true">
-						<p>Wahou mais c'est la bonne réponse !</p>
-						<br>
-						<p>Les premiers jours, vous risquez d’être bombardé d’informations. Pour que tout ne passe pas à la trappe, prenez des notes. Intéressez-vous notamment à l’organigramme de l’entreprise. Qui fait quoi ? Qui manage qui ? Quels services travaillent ensemble ? 
-						Quels sont les postes-clés du service ? 
-						Si une information vous échappe, interrogez vos collègues. 
-						On ne reprochera jamais à un étudiant de poser des questions et de s’ouvrir aux autres.
-						</p>
-					</section>
-					<section data-noupdownleft="true">
-						<p>Mauvaise réponse ....</p>
-						<br>
-						<p>Les premiers jours, vous risquez d’être bombardé d’informations. Pour que tout ne passe pas à la trappe, prenez des notes. Intéressez-vous notamment à l’organigramme de l’entreprise. Qui fait quoi ? Qui manage qui ? Quels services travaillent ensemble ? 
-						Quels sont les postes-clés du service ? 
-						Si une information vous échappe, interrogez vos collègues. 
-						On ne reprochera jamais à un étudiant de poser des questions et de s’ouvrir aux autres.
-						</p>
-					</section>
-				</section>
-				
-				<section>
-					<section data-nokeyboard="true">
-						<h2>Sollicitez le tuteur</h2>
-						<p>Dialogue 1</p>
-						<p>Dialogue 2</p>
-						<br>
-						<a href="#/7/2"><button>Mauvaise réponse</button></a>
-						<a href="#/7/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 1</h2>
-						<p>Wahou mais c'est la bonne réponse !</p>
-						<br>
-						<p>Pour que votre période d’alternance se déroule bien,
-						sachez instaurer une relation de confiance avec votre tuteur d’entreprise. 
-						La première étape est de « le tenir régulièrement informé de l’avancement de son travail et de ne pas hésiter à lui faire part de ses difficultés »
-						</p>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 2</h2>
-						<p>Mauvaise réponse ....</p>
-						<br>
-						<p>Pour que votre période d’alternance se déroule bien,
-						sachez instaurer une relation de confiance avec votre tuteur d’entreprise. 
-						La première étape est de « le tenir régulièrement informé de l’avancement de son travail et de ne pas hésiter à lui faire part de ses difficultés »
-						</p>
-					</section>
-				</section>
-				
-				<section>
-					<section data-nokeyboard="true">
-						<h2>Retenir les prénoms</h2>
-						<p>Dialogue 1</p>
-						<p>Dialogue 2</p>
-						<br>
-						<a href="#/8/2"><button>Mauvaise réponse</button></a>
-						<a href="#/8/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 1</h2>
-						<p>Wahou mais c'est la bonne réponse !</p>
-						<br>
-						<p>Ça paraît idiot, mais pour vous intégrer ce sera plus simple. 
-						Essayez de retenir assez rapidement les prénoms et fonctions des personnes qui travaillent à côté de votre bureau pour élargir progressivement votre cercle. 
-						Attention à ne pas être trop familier avec les personnes que vous ne connaissez pas.
-						</p>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 2</h2>
-						<p>Mauvaise réponse ....</p>
-						<br>
-						<p>Ça paraît idiot, mais pour vous intégrer ce sera plus simple. 
-						Essayez de retenir assez rapidement les prénoms et fonctions des personnes qui travaillent à côté de votre bureau pour élargir progressivement votre cercle. 
-						Attention à ne pas être trop familier avec les personnes que vous ne connaissez pas.
-						</p>
-					</section>
-				</section>
-				
-				<section>
-					<section data-nokeyboard="true">
-						<h2>Prise de note</h2>
-						<p>Dialogue 1</p>
-						<p>Dialogue 2</p>
-						<br>
-						<a href="#/9/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
-						<a href="#/9/2"><button>Mauvaise réponse</button></a>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 1</h2>
-						<p>Wahou mais c'est la bonne réponse !</p>
-						<br>
-						<p>Il va falloir que vous deveniez une éponge pour ingérer un maximum d’informations en un minimum de temps. 
-						N’hésitez pas à prendre beaucoup de notes au début, à vous faire des listes de missions pour ne rien oublier pendant les périodes où vous retournez en cours.
-						</p>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 2</h2>
-						<p>Mauvaise réponse ....</p>
-						<br>
-						<p>Il va falloir que vous deveniez une éponge pour ingérer un maximum d’informations en un minimum de temps. 
-						N’hésitez pas à prendre beaucoup de notes au début, à vous faire des listes de missions pour ne rien oublier pendant les périodes où vous retournez en cours.
-						</p>
-					</section>
-				</section>
-				
-				<section>
-					<section data-nokeyboard="true">
-						<h2>Preuve de patience</h2>
-						<p>Dialogue 1</p>
-						<p>Dialogue 2</p>
-						<br>
-						<a href="#/10/2"><button>Mauvaise réponse</button></a>
-						<a href="#/10/1"><button onclick="miseAJourCompteur()">Bonne réponse </button></a>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 1</h2>
-						<p>Wahou mais c'est la bonne réponse !</p>
-						<br>
-						<p>Il arrive que votre employeur vous donne d’autres missions que celles dont vous aviez convenu lors de votre entretien. 
-						Mais c’est normal que celui-ci vous teste au début, montrez-lui que vous êtes impliqué! 
-						Et puis, c’est une bonne occasion de découvrir de nouvelles choses. Peut-être même de vous découvrir un talent caché ?
-						</p>
-					</section>
-					<section data-noupdownleft="true">
-						<h2>Choix 2</h2>
-						<p>Mauvaise réponse ....</p>
-						<br>
-						<p>Il arrive que votre employeur vous donne d’autres missions que celles dont vous aviez convenu lors de votre entretien. 
-						Mais c’est normal que celui-ci vous teste au début, montrez-lui que vous êtes impliqué! 
-						Et puis, c’est une bonne occasion de découvrir de nouvelles choses. Peut-être même de vous découvrir un talent caché ?
-						</p>
-					</section>
-				</section>
-				
-				<section data-nokeyboard="true">
-					<p id="end">Vous avez réalisé XXX bonnes réponses</p>
-					<a href="#/12"><button>Passez à la partie conseil</button></a>
-					<a href="#/3"><button>Revenir au début</button></a>
-				</section>
-				
-				
-				<!-- PARTIE CONSEIL -->
-				<section data-noupdownleft="true">
-					<h2>Partie conseil</h2>
-				</section>
-				
-				<section>
-					<h2>Ponctualité et assiduité</h2>
-					<p>
-						Le non respect des horaires
-						<br/>
-						=
-						<br/>
-						Le non respect de vos collègues 
-					</p>
-				</section>
-				
-				<section>
-					<h2>Intérêt et motivation</h2>
-					<p>
-						Rester concentré
-						<br/>
-						+
-						<br/>
-						Bonnne humeur
-					</p>
-				</section>
-				
-				<section>
-					<h2>Tu ou vous ? </h2>
-					<p>
-						Suivre les codes de l'entreprise
-						<br/>
-						Sinon vouvoyez vos supérieurs
-					</p>
-				</section>
-				
-				<section>
-					<h2>Politesse</h2>
-					<p>
-						Dire bonjour à toutes les personnes présentes dès le matin
-					</p>
-				</section>
-				
-				<section>
-					<h2>Clientèle</h2>
-					<p>
-						Tenue vestimentaire adaptée
-					</p>
-				</section>
-				
-				<section>
-					<h2>Responsabilité </h2>
-					<p>
-						Travailler consciencieusement
-						<br/>
-						+
-						<br/>
-						Demandez si vous ne savez pas 
-					</p>
-				</section>
-				
-				<section>
-					<h2>Ambition </h2>
-					<p>
-						Observez avant d'agir
-						<br/>
-						Soyez force de propositions
-						<br/>
-						Ne pas court circuiter votre chef
-					</p>
-				</section>
-				
-				<section>
-					<h2>"Machine à café" </h2>
-					<p>
-						Ne pas faire état de ses engagements ou opinions politiques
-					</p>
-				</section>
-				
-				<section>
-					<h2>Culture d'entreprise </h2>
-					<p>
-						Connaissance des pratiques
-						<br/>
-						=
-						<br/>
-						Plus rapidement opérationnelle
-					</p>
-				</section>
-				
-				<section>
-					<h2>Conclusion</h2>
-					<p>
-						Importance d'une bonne intégration
-						<br/>
-						Respecter les gens qui vous entourent
-					</p>
-				</section>
-				
-				<section data-nokeyboard="true">
-					<a href="#/0"><button>Accueil</button></a>
-				</section>
-			</div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			var compteurValue = 0;
-			
-			function miseAJourCompteur(){
-				compteurValue++;
-		
-				var endValue = document.getElementById('end');
-		
-				endValue.innerHTML = "Vous avez réalisé "+ compteurValue +" bonnes réponses.";
-		
-			}
-		</script>
-
-		<script>
-
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
-	</body>
-</html>
->>>>>>> origin/master

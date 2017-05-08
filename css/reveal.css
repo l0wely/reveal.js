@@ -76,6 +76,25 @@ body {
   }
 
 
+  #principal_input{
+    height: 1.6em;
+    padding-bottom: 0px;
+    padding-top: 32px;
+    font-size: 65px;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: none;
+    word-wrap: break-word;
+    width: 4em;
+    background: transparent;
+    border: 0;
+    color: #f2dea6;
+  }
+
+
 /*********************************************
  * VIEW FRAGMENTS
  *********************************************/
