@@ -58,6 +58,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     font-family: "Lato";
+    margin-bottom: 10px;
     
     -o-transition:.5s;
     -ms-transition:.5s;
